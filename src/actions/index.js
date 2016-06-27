@@ -220,10 +220,13 @@ export function hoverMarker(coordinates) {
 }
 
 export function setRouteIndex(routeIndex) {
-  return {
-    type: types.ROUTE_INDEX,
-    routeIndex
-  };
+  return (dispatch) => {
+    dispatch(eventEmit('routeIndex', { routeIndex }));
+    dispatch({
+      type: types.ROUTE_INDEX,
+      routeIndex
+    });
+  }
 }
 
 export function originCoordinates(coordinates) {
