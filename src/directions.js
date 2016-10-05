@@ -147,9 +147,6 @@ export default class Directions extends mapboxgl.Control {
             const index = features[0].properties['route-index'];
             this.actions.setRouteIndex(index);
           }
-        } else {
-          this.actions.setDestination(coords);
-          this.map.flyTo({ center: coords });
         }
       }
     }.bind(this));
